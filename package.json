@@ -4,11 +4,27 @@
   "description": "Access your Tower repositories from Alfred",
   "author": "Martín M.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skydiver/alfred-tower3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skydiver/alfred-tower3/issues"
+  },
+  "keywords": [
+    "alfred",
+    "alfred-workflow",
+    "alfred3-workflow",
+    "tower"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
   },
   "dependencies": {
-    "alfredo": "^0.2.0"
+    "alfred-notifier": "^0.2.3",
+    "alfredo": "^0.2.0",
+    "alfy": "^0.8.0"
   }
 }
