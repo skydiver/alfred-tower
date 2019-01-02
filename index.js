@@ -9,19 +9,11 @@ const join = require('path').join;
 const format = require('util').format;
 const exists = require('fs').existsSync;
 
-var BOOKMARKS_FILE = join(
+const BOOKMARKS_FILE_V3 = join(
   process.env.HOME,
   'Library',
   'Application Support',
-  'com.fournova.Tower2',
-  'bookmarks.plist'
-);
-
-var BOOKMARKS_FILE_V2 = join(
-  process.env.HOME,
-  'Library',
-  'Application Support',
-  'com.fournova.Tower2',
+  'com.fournova.Tower3',
   'bookmarks-v2.plist'
 );
 
