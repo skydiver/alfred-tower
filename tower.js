@@ -91,7 +91,7 @@ const getItems = (arg) => {
       title: bookmark.name,
       subtitle: bookmark.path,
       arg: bookmark.path,
-      icon: 'CloneRepoIcon.png'
+      icon: 'repo.png'
     });
   });
 };
