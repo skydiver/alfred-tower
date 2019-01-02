@@ -1,13 +1,13 @@
 {
-  "name": "tower-alfred-workflow",
+  "name": "alfred-tower3",
   "version": "1.0.0",
-  "description": "Quickly access your Tower 2 git repositories from Alfred 2",
+  "description": "Access your Tower repositories from Alfred",
+  "author": "Martín M.",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nicholas Penree <nick@penree.com>",
-  "license": "MIT",
   "dependencies": {
     "alfredo": "^0.2.0"
   }
