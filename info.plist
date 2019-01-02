@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.weborate.alfred.tower</string>
+	<key>connections</key>
+	<dict>
+		<key>1C28A00D-7098-4273-8E46-B1AE0BDE4830</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2E236D4A-EF05-45DD-AF0C-200A9600D211</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in Finder</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7CC682B7-1204-48CB-9657-D03E454FEABA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Terminal</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>736D7DC2-DCD6-4716-90CA-9BEE4E8BE8DB</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>681DDC3C-04BA-4C1E-8DA6-393C3B489FF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F955FF5D-B84D-4E23-9F14-AC659DA4F9AD</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Visual Studio Code</string>
+			</dict>
+		</array>
+		<key>F88B79B9-B22A-4A08-8A36-53DD874AFDB3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2E236D4A-EF05-45DD-AF0C-200A9600D211</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in Finder</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7CC682B7-1204-48CB-9657-D03E454FEABA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Terminal</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>736D7DC2-DCD6-4716-90CA-9BEE4E8BE8DB</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>681DDC3C-04BA-4C1E-8DA6-393C3B489FF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F955FF5D-B84D-4E23-9F14-AC659DA4F9AD</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Visual Studio Code</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nicholas Penree</string>
+	<key>description</key>
+	<string>Quickly access your Tower 2 git repositories from Alfred 2</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Tower Repositories</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>t</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching Repositories...</string>
+				<key>script</key>
+				<string>/usr/local/bin/node index.js "{query}"</string>
+				<key>title</key>
+				<string>Search for Tower Repositories...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1C28A00D-7098-4273-8E46-B1AE0BDE4830</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>2E236D4A-EF05-45DD-AF0C-200A9600D211</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>cd {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>7CC682B7-1204-48CB-9657-D03E454FEABA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>796E13B7-90B5-458D-B0C8-57F53D2F8F42</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>736D7DC2-DCD6-4716-90CA-9BEE4E8BE8DB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tower</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching Repositories...</string>
+				<key>script</key>
+				<string>/usr/local/bin/node index.js "{query}"</string>
+				<key>title</key>
+				<string>Search for Tower Repositories...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F88B79B9-B22A-4A08-8A36-53DD874AFDB3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>TOWER_PATH="/Applications/Tower.app"
+
+if ! [ -d $TOWER_PATH ]; then
+    TOWER_PATH=`find /Applications -type d -maxdepth 3 -name Tower.app`
+fi
+
+GITTOWER_PATH="$TOWER_PATH/Contents/MacOS/gittower"
+
+# $1 is set by the "Run Script" action
+args="{query}"
+
+eval $GITTOWER_PATH $args</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>681DDC3C-04BA-4C1E-8DA6-393C3B489FF0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+set finderSelection to ""
+set theTarget to ""
+set appPath to path to application "Visual Studio Code"
+set defaultTarget to (path to home folder as alias)
+-- comment line above and uncomment line below to open desktop instead of user home when there's no selection or open folder in the Finder:
+-- set defaultTarget to (path to desktop folder as alias)
+
+if (q as string) is "" then
+    tell application "Finder"
+        set finderSelection to (get selection)
+        if length of finderSelection is greater than 0 then
+            set theTarget to finderSelection
+        else
+            try
+                set theTarget to (folder of the front window as alias)
+            on error
+                set theTarget to defaultTarget
+            end try
+        end if
+
+        tell application "Finder"
+            open theTarget using appPath
+        end tell
+
+    end tell
+else
+    try
+        set targets to {}
+        set oldDelimiters to text item delimiters
+        set text item delimiters to tab
+        set qArray to every text item of q
+        set text item delimiters to oldDelimiters
+        repeat with atarget in qArray
+
+            if atarget starts with "~" then
+                set userHome to POSIX path of (path to home folder)
+                if userHome ends with "/" then
+                    set userHome to characters 1 thru -2 of userHome as string
+                end if
+
+                try
+                    set atarget to userHome &amp; characters 2 thru -1 of atarget as string
+                on error
+                    set atarget to userHome
+                end try
+
+            end if
+
+            set targetAlias to ((POSIX file atarget) as alias)
+            set targets to targets &amp; targetAlias
+        end repeat
+
+        set theTarget to targets
+
+        tell application "Finder"
+            open theTarget using appPath
+        end tell
+
+    on error
+        return (atarget as string) &amp; " is not a valid file or folder path."
+    end try
+end if
+
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F955FF5D-B84D-4E23-9F14-AC659DA4F9AD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1C28A00D-7098-4273-8E46-B1AE0BDE4830</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>2E236D4A-EF05-45DD-AF0C-200A9600D211</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>681DDC3C-04BA-4C1E-8DA6-393C3B489FF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>736D7DC2-DCD6-4716-90CA-9BEE4E8BE8DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>796E13B7-90B5-458D-B0C8-57F53D2F8F42</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>7CC682B7-1204-48CB-9657-D03E454FEABA</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>F88B79B9-B22A-4A08-8A36-53DD874AFDB3</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>F955FF5D-B84D-4E23-9F14-AC659DA4F9AD</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/drudge/tower-alfred-workflow</string>
+</dict>
+</plist>
