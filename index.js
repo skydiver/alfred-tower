@@ -11,7 +11,9 @@ const items = alfy
   .map(x => ({
     title: x.name,
     subtitle: x.path,
-    icon: 'repo.png',
+    icon: {
+      path: './repo.png'
+    }
   }));
 
 alfy.output(items);
