@@ -10,57 +10,67 @@ const BOOKMARKS_FILE_V3 = join(
   'bookmarks-v2.plist'
 );
 
-const parseBookmarksSync = (f) => {
-  let file = alfredo.readPlistSync(f);
-  let sortOrder = 0;
-  let bookmarks = [];
+const walk = (entry, parent = null, bookmarks = [], sortOrder = 0) => {
+  let SORT = sortOrder;
+  const PARENT = parent || {};
 
-  const walk = (entry, parent) => {
-    const PARENT = parent || {};
+  if (entry.fileURL) {
+    const folder = PARENT.name ? format('%s/', PARENT.name) : '';
+    const name = format('%s%s', folder, entry.name);
+    const path = decodeURIComponent(entry.fileURL.substr(7));
 
-    if (entry.fileURL) {
-      const folder = PARENT.name ? format('%s/', PARENT.name) : '';
-      const name = format('%s%s', folder, entry.name);
-      const path = decodeURIComponent(entry.fileURL.substr(7));
-
-      if (entry.valid) {
-        bookmarks.push({
-          name: name,
-          path: path,
-          sortOrder: sortOrder
-        });
-      }
-
-      sortOrder++;
+    if (entry.valid) {
+      bookmarks.push({
+        name: name,
+        path: path,
+        sortOrder: SORT
+      });
     }
 
-    (entry.children || []).forEach(function(child) {
-      walk(child, entry, bookmarks);
-    });
-  };
-
-  if (file.name) {
-    delete file.name;
+    SORT++;
   }
 
-  walk(file);
+  (entry.children || []).forEach((child) => {
+    walk(child, entry, bookmarks);
+  });
 
   return bookmarks;
 };
 
+/**
+ * Parse Tower bookmarks file
+ *
+ * @param   {string} f  Tower3 bookmarks file
+ * @returns {array}     Bookmarks list
+ */
+const parseBookmarksSync = (f) => {
+  let file = alfredo.readPlistSync(f);
+  if (file.name) {
+    delete file.name;
+  }
+  const bookmarks = walk(file);
+  return bookmarks;
+};
+
+/**
+ * Search Tower3 bookmarks file
+ *
+ * @param   {string} arg  Search string
+ * @returns {array}       Search results
+ */
 const getResults = (arg) => {
   const bookmarks = parseBookmarksSync(BOOKMARKS_FILE_V3) || [];
   let results = [];
 
   if (!arg) {
-    results = bookmarks.sort(function(a, b) {
+    results = bookmarks.sort((a, b) => {
       return a.sortOrder - b.sortOrder;
     });
   } else {
-    return alfredo.fuzzy(arg, bookmarks.map(function(bookmark) {
+    return alfredo.fuzzy(arg, bookmarks.map((bookmark) => {
       return bookmark.name;
-    })).map(function(name) {
-      return bookmarks.filter(function(bookmark) {
+    })).map((name) => {
+      return bookmarks.filter((bookmark) => {
         return bookmark.name === name;
       }).pop();
     });
@@ -69,6 +79,12 @@ const getResults = (arg) => {
   return results || [];
 };
 
+/**
+ * Return found items in Alfred format
+ *
+ * @param   {string} arg  Search string
+ * @returns {object}      Workflow items
+ */
 const getItems = (arg) => {
   return getResults(arg).map((bookmark) => {
     return new alfredo.Item({
@@ -79,6 +95,7 @@ const getItems = (arg) => {
     });
   });
 };
+
 
 module.exports = {
   getItems
