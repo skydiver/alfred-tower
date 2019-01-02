@@ -1,13 +1,13 @@
-/*!
+/*
  * tower-alfred-workflow
  * Copyright(c) 2015 Nicholas Penree <nick@penree.com>
  * MIT Licensed
  */
 
-var alfredo = require('alfredo');
-var join = require('path').join;
-var format = require('util').format;
-var exists = require('fs').existsSync;
+const alfredo = require('alfredo');
+const join = require('path').join;
+const format = require('util').format;
+const exists = require('fs').existsSync;
 
 var BOOKMARKS_FILE = join(
   process.env.HOME,
