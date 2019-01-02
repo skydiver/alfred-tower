@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "alfred-notifier": "^0.2.3",
-    "alfredo": "^0.2.0",
     "alfy": "^0.8.0",
     "plist": "^3.0.1"
   }

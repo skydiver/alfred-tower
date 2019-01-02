@@ -1,9 +1,17 @@
-const alfredo = require('alfredo');
+const alfy = require('alfy');
 const alfredNotifier = require('alfred-notifier');
 const tower = require('./lib/tower');
 
 alfredNotifier();
 
-const args = process.argv;
-const items = tower.getItems(args.length >= 3 ? args[2] : null);
-alfredo.feedback(items);
+const repos = tower.getBookmarks();
+
+const items = alfy
+  .inputMatches(repos, 'name')
+  .map(x => ({
+    title: x.name,
+    subtitle: x.path,
+    icon: 'repo.png',
+  }));
+
+alfy.output(items);
