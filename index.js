@@ -1,6 +1,6 @@
 const alfredo = require('alfredo');
 const alfredNotifier = require('alfred-notifier');
-const tower = require('./tower');
+const tower = require('./lib/tower');
 
 alfredNotifier();
 
