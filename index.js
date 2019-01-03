@@ -15,6 +15,7 @@ if (query.trim() !== '') {
 const items = repos.map(x => ({
   title: x.name,
   subtitle: x.path,
+  arg: x.path,
   icon: {
     path: './repo.png'
   }
