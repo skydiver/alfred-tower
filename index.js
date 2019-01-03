@@ -1,19 +1,23 @@
 const alfy = require('alfy');
 const alfredNotifier = require('alfred-notifier');
 const tower = require('./lib/tower');
+const fuzzy = require('./lib/fuzzy');
 
 alfredNotifier();
 
-const repos = tower.getBookmarks();
+let repos = tower.getBookmarks();
+const query = process.argv[2];
 
-const items = alfy
-  .inputMatches(repos, 'name')
-  .map(x => ({
-    title: x.name,
-    subtitle: x.path,
-    icon: {
-      path: './repo.png'
-    }
-  }));
+if (query.trim() !== '') {
+  repos = fuzzy(query, repos, ['name']);
+}
+
+const items = repos.map(x => ({
+  title: x.name,
+  subtitle: x.path,
+  icon: {
+    path: './repo.png'
+  }
+}));
 
 alfy.output(items);
