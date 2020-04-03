@@ -1,20 +1,23 @@
 {
-  "name": "alfred-tower3",
+  "name": "alfred-tower",
   "version": "1.2.1",
   "description": "Access your Tower repositories from Alfred",
   "author": "Martín M.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skydiver/alfred-tower3.git"
+    "url": "git+https://github.com/skydiver/alfred-tower.git"
   },
   "bugs": {
-    "url": "https://github.com/skydiver/alfred-tower3/issues"
+    "url": "https://github.com/skydiver/alfred-tower/issues"
   },
   "keywords": [
     "alfred",
+    "alfred3",
+    "alfred4",
     "alfred-workflow",
     "alfred3-workflow",
+    "alfred4-workflow",
     "tower"
   ],
   "main": "index.js",
