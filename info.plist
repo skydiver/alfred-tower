@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.flydev.alfred.tower3</string>
+	<string>com.flydev.alfred.tower</string>
 	<key>connections</key>
 	<dict>
 		<key>F88B79B9-B22A-4A08-8A36-53DD874AFDB3</key>
@@ -67,7 +67,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Tower3 Repositories</string>
+	<string>Tower Repositories</string>
 	<key>objects</key>
 	<array>
 		<dict>
